@@ -9,8 +9,8 @@ const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        Uma pequena seleção de{" "}
+        <span className="text-purple">projetos recentes</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map(({ id, title, des, img, iconLists, link }) => (
@@ -52,12 +52,12 @@ const RecentProjects = () => {
                   {iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className="border border-black/[.5] rounded-full bg-white-100 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <img src={icon} alt="icon5" className="p-1" />
                     </div>
                   ))}
                 </div>
@@ -68,7 +68,7 @@ const RecentProjects = () => {
                     target="_blank"
                     className="flex lg:text-xl md:text-xs text-sm text-purple"
                   >
-                    Check Live Site
+                    Ver Projeto
                   </a>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
