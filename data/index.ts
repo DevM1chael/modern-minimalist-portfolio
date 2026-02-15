@@ -130,7 +130,7 @@ export const socialMedia = [
   {
     id: 3,
     img: "/wha.svg", // Assuming there is a whatsapp icon or similar, if not I might need to check available icons. But wait, I saw 'link.svg', 'git.svg', 'medium.svg' in the original file. I'll stick to what I know exists or use a generic one. The user provided instagram too.
-    link: "https://www.instagram.com/_michaelwazowski/",
+    link: "https://wa.me/5513996536924?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20seus%20projetos.",
   },
 ];
 

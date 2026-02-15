@@ -1,10 +1,16 @@
+"use client";
+
 import { FaLocationArrow } from "react-icons/fa6";
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { useState } from "react";
 
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
-import Link from "next/link";
+// import Link from "next/link"; // Not used currently
 
 const Footer = () => {
+  const [showContactOptions, setShowContactOptions] = useState(false);
+
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       {/* background grid */}
@@ -24,13 +30,38 @@ const Footer = () => {
         <p className="text-white-200 md:mt-10 my-5 text-center">
           Entre em contato comigo hoje e vamos discutir como posso ajudar você a alcançar seus objetivos.
         </p>
-        <a href="mailto:michaelhenriquepedro@gmail.com">
+        
+        {!showContactOptions ? (
           <MagicButton
             title="Vamos conversar"
             icon={<FaLocationArrow />}
             position="right"
+            handleClick={() => setShowContactOptions(true)}
           />
-        </a>
+        ) : (
+          <div className="flex flex-col md:flex-row gap-4 mt-4">
+             <a href="mailto:michaelhenriquepedro@gmail.com">
+              <MagicButton
+                title="Enviar Email"
+                icon={<FaEnvelope />}
+                position="right"
+                otherClasses="!bg-[#161a31]"
+              />
+            </a>
+            <a 
+              href="https://wa.me/5513996536924?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20seus%20projetos."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MagicButton
+                title="WhatsApp"
+                icon={<FaWhatsapp />}
+                position="right"
+                otherClasses="!bg-[#161a31]"
+              />
+            </a>
+          </div>
+        )}
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light lg:mb-[-2rem] sm:mb-2">
